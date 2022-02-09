@@ -23,17 +23,6 @@ const ListingsList = () => {
       }
 
       const data = await res.json();
-/* 
-      const result = {
-        status: res.status + "-" + res.statusText,
-        headers: {
-          "Content-Type": res.headers.get("Content-Type"),
-          "Content-Length": res.headers.get("Content-Length"),
-        },
-        length: res.headers.get("Content-Length"),
-        data: data,
-      }; */
-
         setGetResult(data);
       } catch (err) {
         setGetResult(err.message);
@@ -131,8 +120,8 @@ const ListingsList = () => {
         </div>
         { getResult1 && <div className='alert alert-secondary mt-2' role="alert"><pre>{getResult1}</pre></div>}
         { getResult && 
-            <div>
-              <table className="table table-striped">
+            <div className="table-responsive">
+              <table className="card-table table-striped">
                 <thead className="thead-light">
                   <tr>
                     <th scope="col">Listing Url</th>
